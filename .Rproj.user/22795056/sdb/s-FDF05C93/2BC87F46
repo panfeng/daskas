@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\n\nshinyServer(function(input, output) {\n  \n  sliderValues<-reactive({\n    data.frame(\n      Name=c(\"Single Chapter\",\"Many Chapters\"),\n      Value=as.character(\n        c(\n          input$chapter,\n          paste(input$chapters,collapse=' ') \n          )\n        ),\n      stringsAsFactors=FALSE )\n  } )\n  \n  output$values<-renderTable({\n    sliderValues()\n  })\n})",
+    "created" : 1362141802156.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3477078060",
+    "id" : "2BC87F46",
+    "lastKnownWriteTime" : 1362144305,
+    "path" : "~/shinyapp/daskas/server.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

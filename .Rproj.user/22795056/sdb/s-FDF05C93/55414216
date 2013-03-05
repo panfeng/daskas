@@ -1,0 +1,16 @@
+{
+    "contents" : "library(shiny)\nshinyUI(\n  pageWithSidebar(\n    \n    # Application titile\n    headerPanel(\"Economic Manuscripts: Capital: Volume One\"),\n    \n    sidebarPanel(\n      sliderInput(\"chapter\",\"Choose the Chapter:\",min=1,max=33,value=1),\n      sliderInput(\"chapters\", \"Choose Chapters\", min = 1, max = 33, value = c(1,2))\n      ),\n    \n    mainPanel(tableOutput(\"values\"))\n  )\n)",
+    "created" : 1362141675038.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3096676767",
+    "id" : "55414216",
+    "lastKnownWriteTime" : 1362143997,
+    "path" : "~/shinyapp/daskas/ui.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

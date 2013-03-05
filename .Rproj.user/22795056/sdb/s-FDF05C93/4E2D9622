@@ -1,0 +1,16 @@
+{
+    "contents" : "source(\"daskapital.R\")\n# if(!exists())\n",
+    "created" : 1362471029526.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1409240537",
+    "id" : "4E2D9622",
+    "lastKnownWriteTime" : 1362472855,
+    "path" : "~/shinyapp/daskas/4user.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

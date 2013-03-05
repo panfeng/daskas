@@ -1,0 +1,9 @@
+{
+    "path" : "~/shinyapp/daskas",
+    "sortOrder" : [
+        {
+            "ascending" : true,
+            "columnIndex" : 2
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "contents" : "library(tm)\n\nuserchoose<-function(){\n  ANSWER<-readline(\"Please choose a chapter(from chapter1 to chapter33):\\n\\n\")\n  if(ANSWER>=1&ANSWER<=33){\n    # answer<-as.numeric(ANSWER)\n    answer<<-ANSWER\n    }else{\n      cat(\"Please input a number between 1 to 33\") \n    }\n}\n\npath<-\"C:/Users/ICT/Documents/capital-v1/content\"\n# daskapitalv1<-Corpus(DirSource(path,encoding=\"UTF-8\"))\ndaskapitalv1<-Corpus(DirSource(path,encoding=\"UTF-8\"),readerControl=list(language=\"en\"))\n# \ndaskapital_Plain<-tm_map(daskapitalv1,stripWhitespace)\n# to lower\ndaskapital_Tolower<-tm_map(daskapital_Plain,tolower)\n# remove stopwords\ndaskapital_Stopwords<-tm_map(daskapital_Tolower,removeWords,stopwords(\"english\"))\n# to stemming all the 33file takes too much time...\n# daskapital_Stemming<-tm_map(daskapital_Stopwords,stemDocument)\n\nif(!exists(\"answer\")){ answer<-1  }\nnchapter<-as.numeric(answer)\n\ndaskapital_user<-tm_map(daskapital_Stopwords[nchapter],stemDocument)\n\n#as DTM\ndaskapital_dtm<-DocumentTermMatrix(daskaptial_user,control=list(removePunctuation=TRUE))\nfreqTerm<-findFreqTerms(daskapital_dtm,30)\ntermFrequency<-colSums(as.matrix(daskapital_dtm))\ntermFrequency<-subset(termFrequency,termFrequency>=50)\ntermFrequency<-sort(termFrequency)\n\n# stem completion for stem included in termFrequency\nstemCom<-stemCompletion(names(termFrequency),daskapitalv1[nchapter])\ntermDF<-as.data.frame(stemCom)\ntermName<-termDF[,1]\ntermNum<-as.numeric(termFrequency)\n\n\nbarplot(termNum,names.arg=termName,las=2)\n",
+    "created" : 1362460982764.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1649952021",
+    "id" : "CC3A79AF",
+    "lastKnownWriteTime" : 1362482924,
+    "path" : "~/shinyapp/daskas/daskapital.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
